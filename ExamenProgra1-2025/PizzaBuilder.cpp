@@ -14,6 +14,8 @@ void PizzaBuilder::BuildPizza() {
     //SelectCheese();
     //SelectHerbs();
     SelectMeats();
+    SelectHerb();
+    //SelectMeats();
 }
 
 void PizzaBuilder::DisplayFinalPizza() const {
@@ -72,3 +74,50 @@ void PizzaBuilder::SelectMeats() {
 }
 
         
+void PizzaBuilder::SelectCheese() {
+    std::cout << "\n--- Selecting Cheese ---" << std::endl;
+
+    // TODO: Reusar esta linea, pero con su propio Repositorio.
+    IngredientSelector<CheeseRepository> selector(cheeseRepo_, availableCheeses_, "Cheese");
+
+    while (true) {
+        selector.DisplayAvailableIngredients();
+
+        std::cout << "\nEnter Cheese type (or 'done' to finish): ";
+        std::string userChoice;
+        std::getline(std::cin, userChoice);
+
+        if (userChoice == "done" || userChoice == "DONE") {
+            break;
+        }
+
+        selector.AddIngredientToPizza(userChoice, selectedIngredients_);
+    }
+}
+
+
+
+
+
+void PizzaBuilder::SelectHerb() {
+
+    std::cout << "\n--- Selecting Herb ---" << std::endl;
+
+    // TODO: Reusar esta linea, pero con su propio Repositorio.
+    IngredientSelector<HerbRepository> selector(HerbRepo_, availableHerb_, "Herb");
+
+    while (true) {
+        selector.DisplayAvailableIngredients();
+
+        std::cout << "\nEnter Herb type (or 'done' to finish): ";
+        std::string userChoice;
+        std::getline(std::cin, userChoice);
+
+        if (userChoice == "done" || userChoice == "DONE") {
+            break;
+        }
+
+        selector.AddIngredientToPizza(userChoice, selectedIngredients_);
+    }
+}
+
