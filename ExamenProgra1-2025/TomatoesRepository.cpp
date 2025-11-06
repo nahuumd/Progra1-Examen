@@ -21,4 +21,4 @@ void TomatoesRepository::UpdateQuantity(const std::string& tomatoType, int newQu
         throw std::invalid_argument("Unknown tomato type: " + tomatoType);
     }
     it->second[0] = std::to_string(newQuantity);
-}
+    }
