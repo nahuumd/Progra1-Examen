@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include "TomatoesRepository.h"
+#include "HerbRepository.h"
 #include "IngredientSelector.h"
 
 class PizzaBuilder {
@@ -21,5 +22,11 @@ private:
     std::vector<std::string> selectedIngredients_;
 
     const std::vector<std::string> availableTomatoes_ = {"Cherry", "Roma", "Beefsteak", "Heirloom", "Grape"};
-    const std::vector<std::string> availableCheeses_ = {"Mozzarella", "Cheddar", "Parmesan", "Cream Cheese", "Gouda", "Blue Cheese", "Feta"};
+    
+
+    HerbRepository HerbRepo_;
+    std::vector<std::string> selectedIngredients2;
+
+    const std::vector<std::string> availableHerb_ = { "Basil", "Parsley", "Oregano", "Thyme", "Rosemary", "Cilantro", "Sage", "Chives" };
+
 };
