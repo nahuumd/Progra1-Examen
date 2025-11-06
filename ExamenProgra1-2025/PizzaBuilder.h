@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include "TomatoesRepository.h"
+#include "MeatsRepository.h"
 #include "HerbRepository.h"
 #include "CheeseRepository.h"
 #include "IngredientSelector.h"
@@ -15,14 +16,21 @@ public:
 
 private:
     void SelectTomatoes();
+    void SelectMeats();
     void SelectCheese();
    void SelectHerb();
-    void SelectMeat();
+   
 
     TomatoesRepository tomatoRepo_;
     std::vector<std::string> selectedIngredients_;
 
     const std::vector<std::string> availableTomatoes_ = {"Cherry", "Roma", "Beefsteak", "Heirloom", "Grape"};
+
+    MeatsRepository meatRepo_;
+    std::vector<std::string> selectedIngredients3;
+
+    const std::vector<std::string> availableMeats_ = { "Pepperoni", "Bacon", "Chicken", "Shrimp", "Mignon" , "Ham" , "Sausage" , "Prosciutto" };
+        
     
 
     HerbRepository HerbRepo_;
